@@ -1,122 +1,201 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | Zeid Jemni</title>
   <style>
+    /* === Styles globaux === */
     body {
-      font-family: "Segoe UI", Roboto, sans-serif;
-      background: #0f172a;
-      color: #f1f5f9;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      color: #1f2937;
+    }
+
+    a {
+      text-decoration: none;
+      color: #2563eb;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #1d4ed8;
     }
 
     header {
+      background: #2563eb;
+      color: white;
       text-align: center;
-      padding: 60px 20px 30px;
+      padding: 60px 20px;
+    }
+
+    header img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid white;
     }
 
     header h1 {
-      font-size: 2.2em;
-      color: #38bdf8;
+      margin: 0;
+      font-size: 2.5em;
     }
 
     header p {
-      font-size: 1.1em;
-      color: #cbd5e1;
+      font-size: 1.2em;
+      margin-top: 10px;
     }
 
     section {
       max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
+      margin: 50px auto;
+      padding: 0 20px;
     }
 
     h2 {
-      color: #38bdf8;
-      border-bottom: 2px solid #38bdf8;
+      font-size: 1.8em;
+      color: #2563eb;
+      border-bottom: 2px solid #2563eb;
       padding-bottom: 5px;
+      margin-bottom: 20px;
     }
 
-    .project {
-      background: #1e293b;
-      border-radius: 10px;
+    /* === Projets === */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 20px;
-      margin: 20px 0;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      color: #1e40af;
+    }
+
+    .project-card p {
+      margin-bottom: 10px;
+    }
+
+    /* === Compétences === */
+    .skills ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills li {
+      background: #e0f2fe;
+      color: #0369a1;
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 20px;
+      margin: 5px 5px 5px 0;
+      font-weight: 500;
+    }
+
+    /* === Contact === */
+    .contact a.button {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      background: #2563eb;
+      color: white;
+      border-radius: 8px;
       transition: 0.3s;
     }
 
-    .project:hover {
-      background: #334155;
-      transform: translateY(-4px);
+    .contact a.button:hover {
+      background: #1d4ed8;
     }
 
     footer {
       text-align: center;
       padding: 30px;
+      color: #6b7280;
       font-size: 0.9em;
-      color: #94a3b8;
     }
 
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
+
+  <!-- ===== Header ===== -->
   <header>
-    <h1>👋 Bonjour, je suis Zeid Jemni</h1>
-    <p>Étudiant en 3ᵉ année de licence en Génie Logiciel | Passionné par l’IA, la Data et le développement logiciel</p>
+    <img src="profile.jpg" alt="Photo de Zeid Jemni">
+    <h1>Zeid Jemni</h1>
+    <p>Étudiant en L3 Génie Logiciel | Passionné par le développement logiciel, IA et Data</p>
   </header>
 
+  <!-- ===== Projets ===== -->
   <section>
     <h2>🚀 Projets récents</h2>
-    <div class="project">
-      <h3>Tableau de bord ESG</h3>
-      <p>Analyse et visualisation des scores ESG avec Python, SQL et Power BI.</p>
-    </div>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Tableau de bord ESG</h3>
+        <p>Analyse et visualisation des scores ESG des entreprises avec Python, SQL et Power BI.</p>
+        <a href="https://github.com/zeid10a/tableau-esg" target="_blank">Voir sur GitHub</a>
+      </div>
 
-    <div class="project">
-      <h3>Mini-projet ETL Talend</h3>
-      <p>Filtrage et transformation de données avec Talend, stockage dans PostgreSQL et visualisation dans PgAdmin.</p>
-    </div>
+      <div class="project-card">
+        <h3>Mini-projet ETL Talend</h3>
+        <p>Filtrage et transformation de données avec Talend, stockage dans PostgreSQL et visualisation dans PgAdmin.</p>
+        <a href="https://github.com/zeid10a/etl-talend" target="_blank">Voir sur GitHub</a>
+      </div>
 
-    <div class="project">
-      <h3>Application Java multithread</h3>
-      <p>Gestion de processus et threads sous Linux dans un mini-projet Java.</p>
-    </div>
+      <div class="project-card">
+        <h3>Application Java multithread</h3>
+        <p>Gestion de processus et threads sous Linux dans un mini-projet Java.</p>
+        <a href="https://github.com/zeid10a/java-multithread" target="_blank">Voir sur GitHub</a>
+      </div>
 
-    <div class="project">
-      <h3>Prédiction du prix du Bitcoin</h3>
-      <p>Modèle de régression en Python pour la prévision des prix du Bitcoin.</p>
+      <div class="project-card">
+        <h3>Prédiction du prix du Bitcoin</h3>
+        <p>Modèle de régression en Python pour la prévision des prix du Bitcoin.</p>
+        <a href="https://github.com/zeid10a/bitcoin-prediction" target="_blank">Voir sur GitHub</a>
+      </div>
     </div>
   </section>
 
-  <section>
+  <!-- ===== Compétences ===== -->
+  <section class="skills">
     <h2>🧠 Compétences</h2>
     <ul>
-      <li><strong>Langages :</strong> Python, Java, SQL</li>
-      <li><strong>Outils :</strong> Power BI, Talend, PgAdmin, GitHub</li>
-      <li><strong>Domaines :</strong> Développement logiciel, Data Analytics, Machine Learning</li>
+      <li>Python</li>
+      <li>Java</li>
+      <li>SQL</li>
+      <li>Power BI</li>
+      <li>Talend</li>
+      <li>Data Analytics</li>
+      <li>Machine Learning</li>
+      <li>Git/GitHub</li>
     </ul>
   </section>
 
-  <section>
+  <!-- ===== Contact ===== -->
+  <section class="contact">
     <h2>📫 Me contacter</h2>
-    <p>🔗 <a href="https://linkedin.com/in/zeidjemni" target="_blank">LinkedIn</a></p>
-    <p>📂 <a href="https://github.com/zeidjemni" target="_blank">GitHub</a></p>
-    <p>✉️ zeidjemni@example.com</p>
+    <a href="https://linkedin.com/in/zeidjemni" class="button" target="_blank">LinkedIn</a>
+    <a href="https://github.com/zeid10a" class="button" target="_blank">GitHub</a>
+    <p>✉️ Email : zeidjemni@example.com</p>
   </section>
 
+  <!-- ===== Footer ===== -->
   <footer>
-    © 2025 Zeid Jemni — Portfolio personnel hébergé sur <a href="https://github.com" target="_blank">GitHub Pages</a>
+    © 2025 Zeid Jemni — Portfolio hébergé sur <a href="https://github.com" target="_blank">GitHub Pages</a>
   </footer>
+
 </body>
 </html>
